@@ -1,0 +1,56 @@
+[
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/AttitudeIndicator.dir/includes_CXX.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\main.cpp.obj -c D:\\Coding\\opengl_prog\\src\\main.cpp",
+  "file": "D:/Coding/opengl_prog/src/main.cpp",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/main.cpp.obj"
+},
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/AttitudeIndicator.dir/includes_C.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\glad.c.obj -c D:\\Coding\\opengl_prog\\src\\glad.c",
+  "file": "D:/Coding/opengl_prog/src/glad.c",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/glad.c.obj"
+},
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/AttitudeIndicator.dir/includes_CXX.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\graphics\\Shader.cpp.obj -c D:\\Coding\\opengl_prog\\src\\graphics\\Shader.cpp",
+  "file": "D:/Coding/opengl_prog/src/graphics/Shader.cpp",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/graphics/Shader.cpp.obj"
+},
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/AttitudeIndicator.dir/includes_CXX.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\graphics\\Circle.cpp.obj -c D:\\Coding\\opengl_prog\\src\\graphics\\Circle.cpp",
+  "file": "D:/Coding/opengl_prog/src/graphics/Circle.cpp",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/graphics/Circle.cpp.obj"
+},
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/AttitudeIndicator.dir/includes_CXX.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\graphics\\Rectangle.cpp.obj -c D:\\Coding\\opengl_prog\\src\\graphics\\Rectangle.cpp",
+  "file": "D:/Coding/opengl_prog/src/graphics/Rectangle.cpp",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/graphics/Rectangle.cpp.obj"
+},
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/AttitudeIndicator.dir/includes_CXX.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\graphics\\QuarterCircle.cpp.obj -c D:\\Coding\\opengl_prog\\src\\graphics\\QuarterCircle.cpp",
+  "file": "D:/Coding/opengl_prog/src/graphics/QuarterCircle.cpp",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/graphics/QuarterCircle.cpp.obj"
+},
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/AttitudeIndicator.dir/includes_CXX.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\graphics\\RoundedRectangle.cpp.obj -c D:\\Coding\\opengl_prog\\src\\graphics\\RoundedRectangle.cpp",
+  "file": "D:/Coding/opengl_prog/src/graphics/RoundedRectangle.cpp",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/graphics/RoundedRectangle.cpp.obj"
+},
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/AttitudeIndicator.dir/includes_CXX.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\graphics\\AltitudeLines.cpp.obj -c D:\\Coding\\opengl_prog\\src\\graphics\\AltitudeLines.cpp",
+  "file": "D:/Coding/opengl_prog/src/graphics/AltitudeLines.cpp",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/graphics/AltitudeLines.cpp.obj"
+},
+{
+  "directory": "D:/Coding/opengl_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/AttitudeIndicator.dir/includes_CXX.rsp -g -o CMakeFiles\\AttitudeIndicator.dir\\src\\graphics\\TextRenderer.cpp.obj -c D:\\Coding\\opengl_prog\\src\\graphics\\TextRenderer.cpp",
+  "file": "D:/Coding/opengl_prog/src/graphics/TextRenderer.cpp",
+  "output": "CMakeFiles/AttitudeIndicator.dir/src/graphics/TextRenderer.cpp.obj"
+}
+]

@@ -1,0 +1,3 @@
+D:/Coding/opengl_prog/build/CMakeFiles/AttitudeIndicator.dir
+D:/Coding/opengl_prog/build/CMakeFiles/edit_cache.dir
+D:/Coding/opengl_prog/build/CMakeFiles/rebuild_cache.dir

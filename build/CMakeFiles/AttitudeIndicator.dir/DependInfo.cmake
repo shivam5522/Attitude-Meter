@@ -15,7 +15,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Coding/opengl_prog/src/graphics/Rectangle.cpp" "CMakeFiles/AttitudeIndicator.dir/src/graphics/Rectangle.cpp.obj" "gcc" "CMakeFiles/AttitudeIndicator.dir/src/graphics/Rectangle.cpp.obj.d"
   "D:/Coding/opengl_prog/src/graphics/RoundedRectangle.cpp" "CMakeFiles/AttitudeIndicator.dir/src/graphics/RoundedRectangle.cpp.obj" "gcc" "CMakeFiles/AttitudeIndicator.dir/src/graphics/RoundedRectangle.cpp.obj.d"
   "D:/Coding/opengl_prog/src/graphics/Shader.cpp" "CMakeFiles/AttitudeIndicator.dir/src/graphics/Shader.cpp.obj" "gcc" "CMakeFiles/AttitudeIndicator.dir/src/graphics/Shader.cpp.obj.d"
-  "D:/Coding/opengl_prog/src/graphics/TextRenderer.cpp" "CMakeFiles/AttitudeIndicator.dir/src/graphics/TextRenderer.cpp.obj" "gcc" "CMakeFiles/AttitudeIndicator.dir/src/graphics/TextRenderer.cpp.obj.d"
   "D:/Coding/opengl_prog/src/main.cpp" "CMakeFiles/AttitudeIndicator.dir/src/main.cpp.obj" "gcc" "CMakeFiles/AttitudeIndicator.dir/src/main.cpp.obj.d"
   )
 

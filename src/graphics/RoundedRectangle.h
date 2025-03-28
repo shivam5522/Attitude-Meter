@@ -8,9 +8,14 @@
 
 class RoundedRectangle {
 public:
+    // Member variables
     float x, y, width, height, radius;
     int segments;
+
+    // Constructor
     RoundedRectangle(float x, float y, float width, float height, float radius, int segments);
+
+    // Method to draw the rounded rectangle
     void draw(Shader& shader);
 };
 

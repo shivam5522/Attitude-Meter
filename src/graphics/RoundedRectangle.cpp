@@ -5,6 +5,7 @@
 #include "Shader.h"
 
 
+// Constructor
 RoundedRectangle::RoundedRectangle(float x, float y, float width, float height, float radius, int segments)
     : x(x), y(y), width(width), height(height), radius(radius), segments(segments)
     {}

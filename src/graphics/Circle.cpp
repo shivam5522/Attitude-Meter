@@ -2,9 +2,12 @@
 #include "../config.h"
 #include "Shader.h"
 
+
+// Constructor
 Circle::Circle(float x, float y, float radius, int segments)
     : x(x), y(y), radius(radius), segments(segments)
 {
+    // Generate vertices for the circle
     std::vector<float> vertices;
     vertices.push_back(x);
     vertices.push_back(y);
@@ -14,20 +17,26 @@ Circle::Circle(float x, float y, float radius, int segments)
         vertices.push_back(x + radius * cos(angle));
         vertices.push_back(y + radius * sin(angle));
     }
+
+    // Create VAO and VBO
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
 
+    // Bind VAO and VBO
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
 
+    // Define vertex attributes
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
 
+    // Unbind VBO and VAO
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 }
 
+// Method to draw the circle
 void Circle::draw()
 {
     glBindVertexArray(VAO);
@@ -35,6 +44,7 @@ void Circle::draw()
     glBindVertexArray(0);
 }
 
+// To draw the outline of the circle
 void Circle::drawOutline()
 {
     glBindVertexArray(VAO);
@@ -42,72 +52,7 @@ void Circle::drawOutline()
     glBindVertexArray(0);
 }
 
-void Circle::drawSplit(glm::vec4 color1, glm::vec4 color2, Shader &shader)
-{
-    // Draw the first half (e.g., blue)
-    std::vector<float> vertices1;
-    vertices1.push_back(x); // Center of the circle
-    vertices1.push_back(y);
-
-    for (int i = 0; i <= segments / 2; i++)
-    { // Top half: 0 to π
-        float angle = M_PI * i / (segments / 2);
-        vertices1.push_back(x + radius * cos(angle));
-        vertices1.push_back(y + radius * sin(angle));
-    }
-
-    unsigned int VAO1, VBO1;
-    glGenVertexArrays(1, &VAO1);
-    glGenBuffers(1, &VBO1);
-
-    glBindVertexArray(VAO1);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO1);
-    glBufferData(GL_ARRAY_BUFFER, vertices1.size() * sizeof(float), vertices1.data(), GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
-    glEnableVertexAttribArray(0);
-
-    shader.use();
-    shader.setUniformVec4("uColor", glm::value_ptr(color1)); // Set color for the first half
-    glBindVertexArray(VAO1);
-    glDrawArrays(GL_TRIANGLE_FAN, 0, vertices1.size() / 2);
-    glBindVertexArray(0);
-
-    glDeleteVertexArrays(1, &VAO1);
-    glDeleteBuffers(1, &VBO1);
-
-    // Draw the second half (e.g., brown)
-    std::vector<float> vertices2;
-    vertices2.push_back(x); // Center of the circle
-    vertices2.push_back(y);
-
-    for (int i = 0; i <= segments / 2; i++)
-    { // Bottom half: π to 2π
-        float angle = M_PI + M_PI * i / (segments / 2);
-        vertices2.push_back(x + radius * cos(angle));
-        vertices2.push_back(y + radius * sin(angle));
-    }
-
-    unsigned int VAO2, VBO2;
-    glGenVertexArrays(1, &VAO2);
-    glGenBuffers(1, &VBO2);
-
-    glBindVertexArray(VAO2);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO2);
-    glBufferData(GL_ARRAY_BUFFER, vertices2.size() * sizeof(float), vertices2.data(), GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
-    glEnableVertexAttribArray(0);
-
-    shader.setUniformVec4("uColor", glm::value_ptr(color2)); // Set color for the second half
-    glBindVertexArray(VAO2);
-    glDrawArrays(GL_TRIANGLE_FAN, 0, vertices2.size() / 2);
-    glBindVertexArray(0);
-
-    glDeleteVertexArrays(1, &VAO2);
-    glDeleteBuffers(1, &VBO2);
-}
-
+// To draw an inward overlay with a specified thickness and color
 void Circle::drawInwardOverlay(float thickness, glm::vec4 color, Shader &shader)
 {
     std::vector<float> vertices;
@@ -131,10 +76,12 @@ void Circle::drawInwardOverlay(float thickness, glm::vec4 color, Shader &shader)
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
 
+    // Bind VAO and VBO
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
 
+    // Define vertex attributes
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
 
@@ -150,6 +97,7 @@ void Circle::drawInwardOverlay(float thickness, glm::vec4 color, Shader &shader)
     glDeleteBuffers(1, &VBO);
 }
 
+// To draw overlay lines on the circle
 void Circle::drawOverlayLines(float radius, int segments, Shader &shader, float thickness)
 {
     std::vector<float> vertices;
@@ -175,10 +123,12 @@ void Circle::drawOverlayLines(float radius, int segments, Shader &shader, float 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
 
+    // Bind VAO and VBO
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
 
+    // Define vertex attributes
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
 
@@ -194,8 +144,9 @@ void Circle::drawOverlayLines(float radius, int segments, Shader &shader, float 
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
 
+    // Draw the white triangle at the top
     float triangleHeight = thickness; // Height of the triangle
-    float baseWidth = 0.07f;
+    float baseWidth = 0.07f;        // Width of the triangle's base
 
     std::vector<float> triangleVertices = {
         0.0f, radius - triangleHeight, // Top vertex
@@ -208,19 +159,21 @@ void Circle::drawOverlayLines(float radius, int segments, Shader &shader, float 
     glGenVertexArrays(1, &triangleVAO);
     glGenBuffers(1, &triangleVBO);
 
+    // Bind VAO and VBO
     glBindVertexArray(triangleVAO);
     glBindBuffer(GL_ARRAY_BUFFER, triangleVBO);
     glBufferData(GL_ARRAY_BUFFER, triangleVertices.size() * sizeof(float), triangleVertices.data(), GL_STATIC_DRAW);
 
+    // Define vertex attributes
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
 
     // Set the color to yellow for the triangle
-    shader.setUniformVec4("uColor", glm::value_ptr(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f))); // Yellow color
+    shader.setUniformVec4("uColor", glm::value_ptr(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f))); // White color
 
     // Draw the triangle
     glBindVertexArray(triangleVAO);
-    glDrawArrays(GL_TRIANGLES, 0, 3); // Draw the triangle
+    glDrawArrays(GL_TRIANGLES, 0, 3);
     glBindVertexArray(0);
 
     // Clean up
@@ -230,7 +183,6 @@ void Circle::drawOverlayLines(float radius, int segments, Shader &shader, float 
 
 void Circle::drawTopTriangle(float radius, glm::vec4 color, Shader &shader, float thickness)
 {
-    // Calculate the triangle vertices
     float triangleHeight = 0.05f; // Height of the triangle
     float baseWidth = 0.03f;      // Width of the triangle's base
 
@@ -438,10 +390,12 @@ void Circle::drawFork(float radius, glm::vec4 color, Shader &shader, float thick
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
 
+    // Bind VAO and VBO
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, forkVertices.size() * sizeof(float), forkVertices.data(), GL_STATIC_DRAW);
 
+    // Define vertex attributes
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
 
@@ -458,6 +412,7 @@ void Circle::drawFork(float radius, glm::vec4 color, Shader &shader, float thick
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, blackLineVertices.size() * sizeof(float), blackLineVertices.data(), GL_STATIC_DRAW);
 
+    // Define vertex attributes
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
 
@@ -472,6 +427,7 @@ void Circle::drawFork(float radius, glm::vec4 color, Shader &shader, float thick
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, whiteLineVertices.size() * sizeof(float), whiteLineVertices.data(), GL_STATIC_DRAW);
 
+    // Define vertex attributes
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
 
@@ -486,6 +442,7 @@ void Circle::drawFork(float radius, glm::vec4 color, Shader &shader, float thick
     glDeleteBuffers(1, &VBO);
 }
 
+// Destructor
 Circle::~Circle()
 {
     glDeleteVertexArrays(1, &VAO);

@@ -6,13 +6,16 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+// Adding our string libraries
 #include <fstream>
 #include <sstream>
 #include <string>
 
+// Adding our vector and map libraries
 #include <vector>
 #include <map>
 
+// Adding our math library
 #include <cmath>
 
 // Adding glm library
@@ -20,7 +23,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-// Text render dependency
-#include <freetype2/ft2build.h>
+// Adding our stb_image library (this is for printing text)
+#include "stb_easy_font.h"
 
 #endif

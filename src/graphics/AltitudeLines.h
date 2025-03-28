@@ -5,20 +5,22 @@
 #include <string>
 #include <glm/glm.hpp>
 #include "Shader.h"
-#include "TextRenderer.h"
 
 class AltitudeLines {
 public:
-    AltitudeLines(float startY, float endY, float interval, float lineLength, float textScale, TextRenderer &textRenderer);
-    void draw(Shader &lineShader, Shader &textShader);
+    // Constructor
+    AltitudeLines(float startY, float endY, float interval, float lineLength, float textScale);
 
+    // Method to generate line vertices and render the text as well
+    void draw(Shader &lineShader, Shader &textShader, float rollAngle, float pitchAngle);
+
+// Member variables
 private:
     float startY;
     float endY;
     float interval;
     float lineLength;
     float textScale;
-    TextRenderer &textRenderer;
     std::vector<float> lineVertices;
     void generateLineVertices();
 };

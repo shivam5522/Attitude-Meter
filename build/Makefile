@@ -296,30 +296,6 @@ src/graphics/Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AttitudeIndicator.dir\build.make CMakeFiles/AttitudeIndicator.dir/src/graphics/Shader.cpp.s
 .PHONY : src/graphics/Shader.cpp.s
 
-src/graphics/TextRenderer.obj: src/graphics/TextRenderer.cpp.obj
-.PHONY : src/graphics/TextRenderer.obj
-
-# target to build an object file
-src/graphics/TextRenderer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AttitudeIndicator.dir\build.make CMakeFiles/AttitudeIndicator.dir/src/graphics/TextRenderer.cpp.obj
-.PHONY : src/graphics/TextRenderer.cpp.obj
-
-src/graphics/TextRenderer.i: src/graphics/TextRenderer.cpp.i
-.PHONY : src/graphics/TextRenderer.i
-
-# target to preprocess a source file
-src/graphics/TextRenderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AttitudeIndicator.dir\build.make CMakeFiles/AttitudeIndicator.dir/src/graphics/TextRenderer.cpp.i
-.PHONY : src/graphics/TextRenderer.cpp.i
-
-src/graphics/TextRenderer.s: src/graphics/TextRenderer.cpp.s
-.PHONY : src/graphics/TextRenderer.s
-
-# target to generate assembly for a file
-src/graphics/TextRenderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AttitudeIndicator.dir\build.make CMakeFiles/AttitudeIndicator.dir/src/graphics/TextRenderer.cpp.s
-.PHONY : src/graphics/TextRenderer.cpp.s
-
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -374,9 +350,6 @@ help:
 	@echo ... src/graphics/Shader.obj
 	@echo ... src/graphics/Shader.i
 	@echo ... src/graphics/Shader.s
-	@echo ... src/graphics/TextRenderer.obj
-	@echo ... src/graphics/TextRenderer.i
-	@echo ... src/graphics/TextRenderer.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

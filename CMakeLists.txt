@@ -19,11 +19,9 @@ src/graphics/RoundedRectangle.h
 src/graphics/RoundedRectangle.cpp
 src/graphics/AltitudeLines.h
 src/graphics/AltitudeLines.cpp
-src/graphics/TextRenderer.h
-src/graphics/TextRenderer.cpp
 )
 
-target_include_directories(AttitudeIndicator PRIVATE dependencies graphics "C:/msys64/mingw64/include/freetype2")
+target_include_directories(AttitudeIndicator PRIVATE dependencies graphics)
 
 target_link_directories(AttitudeIndicator PRIVATE dependencies graphics)
-target_link_libraries(AttitudeIndicator glfw3 OpenGL::GL freetype)
+target_link_libraries(AttitudeIndicator glfw3 OpenGL::GL)

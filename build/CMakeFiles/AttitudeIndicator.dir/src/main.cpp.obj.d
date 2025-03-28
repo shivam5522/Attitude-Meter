@@ -371,8 +371,8 @@ CMakeFiles/AttitudeIndicator.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/string.h \
  C:/msys64/mingw64/include/sec_api/string_s.h \
  C:/msys64/mingw64/include/glm/gtc/type_ptr.inl \
- C:/msys64/mingw64/include/freetype2/ft2build.h \
- C:/msys64/mingw64/include/freetype2/freetype/config/ftheader.h \
+ D:/Coding/opengl_prog/dependencies/stb_easy_font.h \
+ C:/msys64/mingw64/include/c++/14.2.0/math.h \
  D:\Coding\opengl_prog\src\graphics/Circle.h \
  D:/Coding/opengl_prog/src/config.h \
  D:\Coding\opengl_prog\src\graphics/Shader.h \
@@ -381,5 +381,4 @@ CMakeFiles/AttitudeIndicator.dir/src/main.cpp.obj: \
  D:\Coding\opengl_prog\src\graphics/Rectangle.h \
  D:\Coding\opengl_prog\src\graphics/QuarterCircle.h \
  D:\Coding\opengl_prog\src\graphics/Rectangle.h \
- D:\Coding\opengl_prog\src\graphics/AltitudeLines.h \
- D:\Coding\opengl_prog\src\graphics/TextRenderer.h
+ D:\Coding\opengl_prog\src\graphics/AltitudeLines.h

@@ -16,8 +16,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/AttitudeIndicator.dir/src/graphics/RoundedRectangle.cpp.obj.d"
   "CMakeFiles/AttitudeIndicator.dir/src/graphics/Shader.cpp.obj"
   "CMakeFiles/AttitudeIndicator.dir/src/graphics/Shader.cpp.obj.d"
-  "CMakeFiles/AttitudeIndicator.dir/src/graphics/TextRenderer.cpp.obj"
-  "CMakeFiles/AttitudeIndicator.dir/src/graphics/TextRenderer.cpp.obj.d"
   "CMakeFiles/AttitudeIndicator.dir/src/main.cpp.obj"
   "CMakeFiles/AttitudeIndicator.dir/src/main.cpp.obj.d"
   "libAttitudeIndicator.dll.a"

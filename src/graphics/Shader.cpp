@@ -1,6 +1,7 @@
 #include "Shader.h"
 #include "../config.h"
 
+// Function to create a shader module (vertex or fragment)
 unsigned int make_module(const std::string& filepath, unsigned int module_type){
     std::ifstream file;
     std::stringstream bufferedLines;
@@ -31,6 +32,7 @@ unsigned int make_module(const std::string& filepath, unsigned int module_type){
     return shaderModule;
 }
 
+// Function to create a complete shader (vertex + fragment)
 unsigned int make_shader(const std::string& vertex_filepath, const std::string& fragment_filepath){
     std::vector<unsigned int> shaderModules;
     shaderModules.push_back(make_module(vertex_filepath, GL_VERTEX_SHADER));
@@ -55,14 +57,17 @@ unsigned int make_shader(const std::string& vertex_filepath, const std::string& 
     return shader;
 }
 
+// Constructor
 Shader::Shader(const char* vertex_filepath, const char* fragment_filepath){
     ID = make_shader(vertex_filepath, fragment_filepath);
 }
 
+// Activate the shader
 void Shader::use(){
     glUseProgram(ID);
 }
 
+// Set uniform variables
 void Shader::setUniformMat4(const std::string& name, const float* value){
     glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, value);
 }
@@ -85,6 +90,7 @@ void Shader::setUniformVec3(const std::string& name, const float* value) {
     glUniform3fv(glGetUniformLocation(ID, name.c_str()), 1, value);
 }
 
+// Destructor
 Shader::~Shader(){
     glDeleteProgram(ID);
 }

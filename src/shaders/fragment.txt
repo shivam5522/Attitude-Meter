@@ -1,8 +1,16 @@
 #version 330 core
 
-in vec3 fragmentColor;
+// ----------
+// Inputs to the fragment shader
 
-out vec4 screenColor;
+in vec3 fragmentColor; // Color passed from the vertex shader
+
+// ----------
+// Output from the fragment shader
+
+out vec4 screenColor; // Final color output to the screen
+
+// ----------
 
 uniform vec4 uColor;
 
